@@ -12,18 +12,22 @@
 $ docker run --name pdns \
   -p 53:53 \
   -p 53:53/udp \
-  0xzz/powerdns:latest \
-    --cache-ttl=60 \
-    --allow-axfr-ips=127.0.0.1,10.0.1.2
+  -v /some/host/path:/etc/powerdns
+  0xzz/powerdns:latest
 ```
+
+On startup, the container will create a default config file in /etc/powerdns if pdns.conf doesnt exist.
 
 ## Configuration
 
 **PowerDNS Configuration:**
 
-Append the PowerDNS setting to the command as shown in the example above.
+Append the PowerDNS setting to the command.
 See `docker run --rm 0xzz/powerdns --help`
 
+or
+
+Edit the config file /etc/powerdns/pdns.conf that gets created on first boot.
 
 ## License
 
@@ -31,5 +35,4 @@ See `docker run --rm 0xzz/powerdns --help`
 
 ### Credits
 
-* Christoph Wiechert <wio@psitrax.de>
-
+* Christoph Wiechert <wio@psitrax.de> [psi-4ward/docker-powerdns](https://github.com/psi-4ward/docker-powerdns)

@@ -4,7 +4,7 @@ set -e
 ETCDIR="/etc/powerdns/"
 [ ! -d "$ETCDIR" ] && mkdir -p "$ETCDIR"
 
-CONFDIR="/etc/powerdns/conf.d/"
+CONFDIR="/etc/powerdns/pdns.d/"
 [ ! -d "$CONFDIR" ] && mkdir -p "$CONFDIR"
 
 CONFFILE=/etc/powerdns/pdns.conf
@@ -13,6 +13,8 @@ if [ ! -f "$CONFFILE" ]; then
 	echo "Config file downloaded because it didnt exist, edit it and restart the container."
 	exit 1
 fi
+
+export EDITOR=vi
 
 # --help, --version
 [ "$1" = "--help" ] || [ "$1" = "--version" ] && exec pdns_server $1
