@@ -2,12 +2,12 @@ FROM alpine:3.14.2
 
 ENV POWERDNS_VERSION=4.6.0-alpha1
 
-RUN apk --update add bash libpq sqlite-libs libstdc++ libgcc mariadb-client mariadb-connector-c lua-dev curl curl-dev && \
-    apk add --virtual build-deps g++ make mariadb-dev postgresql-dev sqlite-dev curl boost-dev mariadb-connector-c-dev && \
+RUN apk --update add bash libpq sqlite-libs libstdc++ libgcc mariadb-client mariadb-connector-c lua-dev curl curl-dev libsodium && \
+    apk add --virtual build-deps g++ make mariadb-dev postgresql-dev sqlite-dev boost-dev libsodium-dev mariadb-connector-c-dev && \
     curl -sSL https://downloads.powerdns.com/releases/pdns-$POWERDNS_VERSION.tar.bz2 | tar xj -C /tmp && \
     cd /tmp/pdns-$POWERDNS_VERSION && \
     ./configure --prefix="" --exec-prefix=/usr --sysconfdir=/etc/powerdns \
-      --with-modules="bind gmysql gpgsql gsqlite3" && \
+      --with-modules="bind gmysql gpgsql gsqlite3" --with-libsodium && \
     make && make install-strip && cd / && \
     mkdir -p /etc/powerdns/conf.d && \
     addgroup -S pdns 2>/dev/null && \
