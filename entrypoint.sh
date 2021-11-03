@@ -14,8 +14,6 @@ if [ ! -f "$CONFFILE" ]; then
 	exit 1
 fi
 
-export EDITOR=vi
-
 # --help, --version
 [ "$1" = "--help" ] || [ "$1" = "--version" ] && exec pdns_server $1
 # treat everything except -- as exec cmd

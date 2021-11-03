@@ -1,5 +1,6 @@
 FROM alpine:3.14.2
 
+ENV EDITOR=vi
 ENV POWERDNS_VERSION=4.6.0-alpha1
 
 RUN apk --update add bash libpq sqlite-libs libstdc++ libgcc mariadb-client mariadb-connector-c lua-dev curl curl-dev libsodium && \
