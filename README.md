@@ -1,6 +1,8 @@
 # PowerDNS Docker Container
 
-* Small Alpine based Image
+[![Docker](https://github.com/0xcd0e/docker-powerdns/actions/workflows/docker-publish.yml/badge.svg?branch=master)](https://github.com/0xcd0e/docker-powerdns/actions/workflows/docker-publish.yml)
+
+* Small Alpine based Image, rebuilt at least weekly
 * MySQL, Postgres, SQLite and Bind backend included
 * DNSSEC support optional
 * PowerDNS version 4.6.0-alpha1 compiled with support for libsodium
@@ -13,7 +15,7 @@ $ docker run --name pdns \
   -p 53:53 \
   -p 53:53/udp \
   -v /some/host/path:/etc/powerdns
-  0xzz/powerdns:latest
+  0xcd0e/powerdns:latest
 ```
 
 On startup, the container will create a default config file in /etc/powerdns if pdns.conf doesnt exist.
@@ -23,7 +25,7 @@ On startup, the container will create a default config file in /etc/powerdns if 
 **PowerDNS Configuration:**
 
 Append the PowerDNS setting to the command.
-See `docker run --rm 0xzz/powerdns --help`
+See `docker run --rm 0xcd0e/powerdns --help`
 
 or
 
