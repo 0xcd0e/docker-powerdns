@@ -9,7 +9,7 @@ CONFDIR="/etc/powerdns/pdns.d/"
 
 CONFFILE=/etc/powerdns/pdns.conf
 if [ ! -f "$CONFFILE" ]; then
-    curl -sSL https://raw.githubusercontent.com/ChrizDoe/docker-powerdns/master/pdns.conf -o $CONFFILE
+    curl -sSL https://raw.githubusercontent.com/0xcd0e/docker-powerdns/master/pdns.conf -o $CONFFILE
 	echo "Config file downloaded because it didnt exist, edit it and restart the container."
 	exit 1
 fi
