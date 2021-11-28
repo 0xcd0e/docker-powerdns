@@ -1,4 +1,4 @@
-FROM alpine:3.14.2
+FROM alpine:3.15
 
 ENV EDITOR=vi
 ENV POWERDNS_VERSION=4.6.0-alpha1
