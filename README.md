@@ -5,7 +5,7 @@
 * Small Alpine based Image, rebuilt at least weekly
 * MySQL, Postgres, SQLite and Bind backend included
 * DNSSEC support optional
-* PowerDNS version 4.6.0-alpha1 compiled with support for libsodium
+* PowerDNS version 4.6.0-beta1 compiled with support for libsodium
 * Graceful shutdown using pdns_control
 
 ## Usage
