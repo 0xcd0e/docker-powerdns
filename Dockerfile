@@ -1,7 +1,7 @@
-FROM alpine:3.17
+FROM alpine:3.18
 
 ENV EDITOR=vi
-ENV POWERDNS_VERSION=4.7.3
+ENV POWERDNS_VERSION=4.8.0
 
 RUN apk --update add bash libpq sqlite-libs libstdc++ libgcc mariadb-client mariadb-connector-c lua-dev curl curl-dev libsodium && \
     apk add --virtual build-deps g++ make mariadb-dev postgresql-dev sqlite-dev boost-dev libsodium-dev mariadb-connector-c-dev && \
